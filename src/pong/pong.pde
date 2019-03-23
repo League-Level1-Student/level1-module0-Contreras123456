@@ -29,4 +29,12 @@ void draw(){
     elmo*=-1;
   if(nani>=575)
     sound.trigger();
+  if(intersects(ball, nani + 25, mouseX, 575, 200))
+    elmo*=-1;
+}
+boolean intersects(int ballX, int ballY, int paddleX, int paddleY, int paddleLength) {
+     if (ballY > paddleY && ballX > paddleX && ballX < paddleX + paddleLength)
+          return true;
+     else 
+          return false;
 }
